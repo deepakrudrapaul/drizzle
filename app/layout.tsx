@@ -1,6 +1,6 @@
 import './globals.css';
-import Footer from "./components/footer"
-import Header from "./components/header"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 export const metadata = {
   title: 'Drizzle',

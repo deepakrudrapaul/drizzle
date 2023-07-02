@@ -66,9 +66,10 @@ export const fetchAllProjects = (
 
 export const createNewProject = async (
   form: ProjectForm,
-  creatorId: string,
-  token: string
+  creatorId: string
 ) => {
+  const { token } = await fetchToken();
+
   const imageUrl = await uploadImage(form.image);
 
   if (imageUrl.url) {
@@ -88,15 +89,13 @@ export const createNewProject = async (
   }
 };
 
-export const updateProject = async (
-  form: ProjectForm,
-  projectId: string,
-  token: string
-) => {
+export const updateProject = async (form: ProjectForm, projectId: string) => {
   function isBase64DataURL(value: string) {
     const base64Regex = /^data:image\/[a-z]+;base64,/;
     return base64Regex.test(value);
   }
+
+  const { token } = await fetchToken();
 
   let updatedForm = { ...form };
 

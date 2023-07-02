@@ -83,6 +83,6 @@ export const authOptions: NextAuthOptions = {
 
 export async function getCurrentUser() {
   const session = (await getServerSession(authOptions)) as SessionInterface;
-
+  console.log({ session }, "Inside Session");
   return session;
 }

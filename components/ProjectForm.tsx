@@ -7,7 +7,7 @@ import FormField from "./FormField";
 import { categoryFilters } from "@/constants";
 import CustomMenu from "./CustomMenu";
 import Button from "./Button";
-import { createNewProject, fetchToken, updateProject } from "@/lib/actions";
+import { createNewProject, updateProject } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 
 type Props = {
@@ -15,11 +15,10 @@ type Props = {
     session: SessionInterface,
     project?: ProjectInterface
 }
-const ProjectForm = async ({type, session, project }: Props) => {
+const ProjectForm = ({type, session, project }: Props) => {
 
     const router = useRouter();
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const {token} = await fetchToken();
     
     const [form, setForm] = useState({
         title: project?.title || '',
@@ -39,11 +38,11 @@ const ProjectForm = async ({type, session, project }: Props) => {
 
         try {
             if(type === 'create') {
-                await createNewProject(form, session?.user?.id, token)
+                await createNewProject(form, session?.user?.id)
                 router.push('/');
             }
             if(type === 'edit') {
-                await updateProject(form, project?.id as string, token)
+                await updateProject(form, project?.id as string)
                 router.push('/');
             }
 

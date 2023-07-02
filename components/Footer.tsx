@@ -25,7 +25,7 @@ const Footer = () => {
     <footer className='flextStart footer'>
       <div className='flex flex-col gap-12 w-full'>
         <div className='flex items-start flex-col'>
-            <Image alt='Drizzle' src='/logo-purple.svg' width={100} height={40} />
+            <Image alt='Drizzle' src='/logo-blue.png' width={100} height={40} />
             <p className='text-start text-sm font-normal mt-5 max-w-xs'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
             </p>

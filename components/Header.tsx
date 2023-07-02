@@ -15,7 +15,7 @@ const Header = async () => {
     <nav className='flexBetween navbar'>
         <div className='flex-1 flexStart gap-10'>
             <Link href="/">
-                <Image alt='Drizzle' width={115} height={43} src="/logo.svg"/>
+                <Image alt='Drizzle' width={115} height={43} src="/logo.png"/>
             </Link>
 
             <ul className='xl:flex hidden text-small gap-7'>

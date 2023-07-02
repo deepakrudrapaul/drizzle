@@ -103,7 +103,7 @@ export const getProjectDetails = async (id: string) => {
   return makeGraphQLRequest(getProjectByIdQuery, { id });
 };
 
-export const getUserProjects = async (id: string, last?: number) => {
+export const getUserProjects = async (id?: string, last?: number) => {
   client.setHeader("x-api-key", apiKey);
   return makeGraphQLRequest(getProjectsOfUserQuery, { id, last });
 };

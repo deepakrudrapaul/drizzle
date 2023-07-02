@@ -6,8 +6,8 @@ import React from 'react'
 
 
 type Props = {
-    userId: string, 
-    projectId: string
+    userId?: string, 
+    projectId?: string
 }
 
 const RelatedProjects = async ({userId, projectId}: Props) => {
